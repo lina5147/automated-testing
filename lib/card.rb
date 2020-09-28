@@ -20,7 +20,18 @@ class Card
   end
 
   def to_s
-    return "#{value} of #{suit.to_s}"
+    values = {
+        1 => "Ace",
+        11 => "Jack",
+        12 => "Queen",
+        13 => "King",
+    }
+
+    if [1, 11, 12, 13].include?(value)
+      return "#{values[value]} of #{suit.to_s}"
+    else
+      return "#{value} of #{suit.to_s}"
+    end
   end
 
 end
