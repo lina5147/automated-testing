@@ -20,15 +20,15 @@ class Card
   end
 
   def to_s
-    values = {
+    face_cards = {
         1 => "Ace",
         11 => "Jack",
         12 => "Queen",
         13 => "King",
     }
 
-    if [1, 11, 12, 13].include?(value)
-      return "#{values[value]} of #{suit.to_s}"
+    if face_cards.keys.include?(value)
+      return "#{face_cards[value]} of #{suit.to_s}"
     else
       return "#{value} of #{suit.to_s}"
     end
