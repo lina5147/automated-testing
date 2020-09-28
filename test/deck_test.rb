@@ -10,17 +10,14 @@ describe Deck do
 
 
   describe "You can create a deck instance" do
-    let
-    it "can be created" do
-      new_deck = Deck.new
+    let(:deck) { Deck.new }
 
-      expect(new_deck).must_be_instance_of Deck
+    it "can be created" do
+      expect(deck).must_be_instance_of Deck
     end
 
     it "the deck should have 52 cards" do
-      new_deck = Deck.new
-
-      expect(new_deck.cards.count).must_equal 52
+      expect(deck.cards.count).must_equal 52
     end
 
     end
