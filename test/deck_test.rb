@@ -10,26 +10,18 @@ describe Deck do
 
 
   describe "You can create a deck instance" do
-
+    let
     it "can be created" do
       new_deck = Deck.new
 
       expect(new_deck).must_be_instance_of Deck
     end
 
-    
-    #   cards = []
-    #
-    #   (1..13).each do |value|
-    #     [:hearts, :spades, :clubs, :diamonds].each do |suit|
-    #       card = Card.new(value, suit)
-    #       cards << card
-    #     end
-    #   end
-    #
-    #   new_deck = Deck.new
-    #   expect(new_deck.cards).must_equal cards
-    # end
+    it "the deck should have 52 cards" do
+      new_deck = Deck.new
+
+      expect(new_deck.cards.count).must_equal 52
+    end
 
     end
 end
