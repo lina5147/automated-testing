@@ -23,11 +23,31 @@ describe Deck do
     it "the draw method can be called" do
       expect(deck).must_respond_to :draw
     end
+
+    it "returns the removed card" do
+      expect(deck.draw).must_be_instance_of Card
+    end
   end
 
   describe "shuffle method" do
     it "The shuffle method can be called" do
       expect(deck).must_respond_to :shuffle
+    end
+  end
+
+  describe "count method" do
+    it "returns an integer" do
+      expect(deck.count).must_be_instance_of Integer
+    end
+
+    it "after a several draws, give the correct number of cards" do
+      5.times { deck.draw }
+      expect(deck.count).must_equal 47
+
+      # additional 10 cards to be drawn
+      10.times { deck.draw }
+      expect(deck.count).must_equal 37
+
     end
   end
 end

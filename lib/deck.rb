@@ -19,10 +19,16 @@ class Deck
   end
 
   def draw
-    # returns a card
+    #removes the last element from the array and returns it
+    card = @cards.pop
+    return card
   end
 
   def shuffle
-    # shuffles the deck
+    @cards.shuffle
+  end
+
+  def count
+    return @cards.count
   end
 end
