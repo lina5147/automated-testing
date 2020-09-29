@@ -7,18 +7,27 @@ describe Deck do
     # a deck should be 52 cards
     # it should have values of 1-13 with each suit
     # 2.  Edge cases
+  let(:deck) { Deck.new }
 
-
-  describe "You can create a deck instance" do
-    let(:deck) { Deck.new }
-
-    it "can be created" do
+  describe "Constructor" do
+    it "can be instantiated" do
       expect(deck).must_be_instance_of Deck
     end
 
     it "the deck should have 52 cards" do
       expect(deck.cards.count).must_equal 52
     end
+  end
 
+  describe "draw method" do
+    it "the draw method can be called" do
+      expect(deck).must_respond_to :draw
     end
+  end
+
+  describe "shuffle method" do
+    it "The shuffle method can be called" do
+      expect(deck).must_respond_to :shuffle
+    end
+  end
 end
